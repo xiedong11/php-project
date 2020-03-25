@@ -16,8 +16,8 @@
     		echo "临时路径: " . $_FILES["file"]["tmp_name"] . "<br />";//获取文件临时地址
 			
 			//自定义文件名称
-			$array=$_FILES["file"]["type"];
-			$array=explode("/",$array);
+			$array=$_FILES["file"]["name"];
+			$array=explode(".",$array);
 			$newfilename=$_SERVER['REQUEST_TIME'];//自定义文件名（测试的时候中文名会操作失败）
 			$_FILES["file"]["name"]=$newfilename.".".$array[1];
 			
